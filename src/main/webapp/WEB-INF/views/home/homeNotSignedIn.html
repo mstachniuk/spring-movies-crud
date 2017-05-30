@@ -3,8 +3,9 @@
 <head>
     <title>Welcome to the Spring MVC Quickstart application! Get started quickly by signing up!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen"
+          th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}"/>
     <script src="../../../resources/js/jquery.min.js" th:src="@{/resources/js/jquery.min.js}"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
 </head>
@@ -12,14 +13,27 @@
 <div th:replace="fragments/layout :: header"></div>
 <div class="container">
     <div class="text-center">
-        <h1>Test</h1>
-        <p class="lead">
-            Welcome to the Spring MVC Quickstart application!
-            Get started quickly by signing up.
-        </p>
-        <p>
-            <a class="btn btn-success btn-lg" id="signup">Sign up</a>
-        </p>
+        <h1>Spring MVC Movies Database</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Release Date</th>
+                <th>Directors</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="movie : ${movies}">
+                <tr>
+                    <td th:text="${movie.title}"></td>
+                    <td th:text="${movie.releaseDate}"></td>
+                    <td th:text="${movie.directors}"></td>
+                </tr>
+            </th:block>
+            </td>
+            </tr>
+            </th:block>
+            </tbody>
     </div>
     <div th:replace="fragments/layout :: footer">&copy; 2016 The Static Templates</div>
 </div>
