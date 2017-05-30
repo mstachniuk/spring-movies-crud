@@ -20,6 +20,7 @@
                 <th>Title</th>
                 <th>Release Date</th>
                 <th>Directors</th>
+                <th>Roles</th>
             </tr>
             </thead>
             <tbody>
@@ -27,13 +28,20 @@
                 <tr>
                     <td th:text="${movie.title}"></td>
                     <td th:text="${movie.releaseDate}"></td>
-                    <td th:text="${movie.directors}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="director : ${movie.directors}" th:text="${director.firstName + ' ' + director.lastName}"></li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li th:each="role : ${movie.roles}" th:text="${role.value.firstName + ' ' + role.value.lastName + ' as ' + role.key}"></li>
+                        </ul>
+                    </td>
                 </tr>
             </th:block>
-            </td>
-            </tr>
-            </th:block>
             </tbody>
+        </table>
     </div>
     <div th:replace="fragments/layout :: footer">&copy; 2016 The Static Templates</div>
 </div>

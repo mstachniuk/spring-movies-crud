@@ -38,11 +38,11 @@ class HomeController {
 
 		ActorDto neo = new ActorDto();
 		neo.setFirstName("Keanu");
-		neo.setFirstName("Reeves");
+		neo.setLastName("Reeves");
 
 		ActorDto morpheus = new ActorDto();
 		morpheus.setFirstName("Laurence");
-		morpheus.setFirstName("Fishburne");
+		morpheus.setLastName("Fishburne");
 		Map<String, ActorDto> roles = new TreeMap<>();
 		roles.put("Neo", neo);
 		roles.put("Morpheus", morpheus);
